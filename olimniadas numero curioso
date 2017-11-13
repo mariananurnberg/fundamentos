@@ -1,0 +1,36 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+bool num_Curioso (int x);
+
+void main (){
+	int n,p;
+	cout << "Ingrese el nunmero: "<< endl;
+	cin >> n;
+	num_Curioso(n);
+	getch();
+}
+
+
+
+bool num_Curioso (int x) {
+	int k,j,f,n;
+	bool t=true;
+	f=1;
+	j=0;
+	while (x>0) {
+		k= x%10;
+		for(float i=1;i<=k;i++) {
+			f=f*i;
+		}
+		j=j+f;
+		x = x/10;
+	}
+	if (j==x)
+		return t;
+	else
+		t=false;
+}
