@@ -1,0 +1,19 @@
+int lectura;
++int led = 13;
++
++void setup() {
++  Serial.begin(9600);
++  pinMode (led,OUTPUT);
++}
++
++void loop() {
++  lectura = analogRead (A0);
++  Serial.print(lectura);
++  if (lectura>600){
++    digitalWrite (led, HIGH);
++  }
++  else {
++    digitalWrite (led, LOW);
++  }
++
++}
