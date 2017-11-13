@@ -1,0 +1,30 @@
++#include "stdafx.h"
++#include <iostream>
++#include "conio.h"
++
++using namespace std;
++
++void contar_may (char letra, int &cont);
++
++void main()
++{
++	char letras;
++	int n=0, nt;
++    cout<<"ingrese el numero de letras:";
++	cin>>nt;
++	for (int i=0; i<nt; i++)
++	{
++		cout<<"ingrese la letra:";
++		cin>>letras;
++	    contar_may (letras,n);
++	}
++	cout<<"el numero de letras mayusculas es:";
++	cout<<n;
++    getch();
++}
++
++void contar_may (char letra, int &cont)
++{
++	if (letra>='A' && letra<='Z')
++		cont++;
++}
