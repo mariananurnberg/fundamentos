@@ -1,0 +1,21 @@
+#include "stdafx.h"
++#include <iostream>
++#include"conio.h"
++
++using namespace std;
++
++int main()
++{
++    char l;
++    int s=0;
++    do{
++        cout<<"ingrese 0 para finalizar el programa"<<endl;
++        cout<<"ingrese una letra"<<endl;
++        cin>>l;
++        if (l>=65 && l<=90)
++            s=s+1;
++    }while(l!='0');
++    cout<<"ingreso "<< s << " letras mayusculas";
++    getch();
++    return 0;
++}
