@@ -1,0 +1,58 @@
++#include "stdafx.h"
+ +#include <iostream>
+ +#include "conio.h"
+ +
+ +#define MAX 100;
+ +using namespace std;
+ +void cargar_vector(double a[],int tamanio);
+ +float mostrar_mayor(double a[],int tamanio);
+ +void mostrar_datos(double a[],int tamanio);
+ +
+ +double a[100];
+ +
+ +void main()
+ +{ 
+ +	double may;
+ +	int n;
+ +	do {
+ +		cout<<"Ingrese el numero de elementos: "<<endl;
+ +		cin>>n;
+ +	} while(!((n>0)&&(n<=100)));
+ +	
+ +	cargar_vector(a,n);
+ +	men=mostrar_mayor(a,n);
+ +	mostrar_datos(a,n);
+ +	cout<<"El numero mayor es: "<<men<<endl;
+ +	getch();
+ +}
+ +
+ +void cargar_vector(double a[],int tamanio)
+ +{ 
+ +	for(int i=0;i<tamanio;i++)
+ +	{
+ +		cout<<"Ingrese los elemenos del vector: "<<endl;
+ +		cin>>a[i];
+ +	}
+ +}
+ +void mostrar_datos(double a[],int tamanio)
+ +{ 
+ +	for(int i=0;i<tamanio;i++)
+ +	{
+ +		cout<<"a["<<i<<"]= ";
+ +		cout<<a[i]<<endl;
+ +	}
+ +}
+ +
+ +float mostrar_mayor(double a[],int tamanio)
+ +{
+ +	double mayor;
+ +	mayor=a[0];
+ +
+ +	for(int i=0;i<tamanio;i++)
+ +	{
+ +	  if(a[i]>mayor)
+ +		  mayor=a[i];
+ +	}
+ +
+ +	  return mayor;
+ +}
