@@ -1,0 +1,117 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#define MAX 100
+
+using namespace std;
+
+void cargarvector(float vec[], int n);
+void mostrarvector(float vec[], int n);
+void ordenar(float vec[], int n);
+float promedio(float vec[], int n);
+int buscar (float vec[], int n, int elemento);
+
+void main()
+{
+	int a[MAX],posicion;
+	float prom;
+	int opcion;
+	do{
+		cout<<"ingrese el numero de elementos:"<<endl;
+		cin>>n;
+	}while(!(n>0)&&(n<MAX);
+
+	// Menu
+	do {
+		//Desplegar las opciones
+		cout<<"\t\t Menu \n";
+		cout<<"\t\t ==== \n";
+		cout<<"1. Cargar\n";
+		cout<<"2. Mostrar\n";
+		cout<<"3. Ordenar\n";
+		cout<<"4. Buscar\n";
+		cout<<"5. Promedio\n";
+		cout<<"0. Salir\n";
+		cout<<"Opcion: ";
+		cin>>opcion;
+		// Condicional multiple
+		switch (opcion)
+		{
+		case 1: cargar (a,n);
+				break;
+		case 2: mostrar(a,n);
+			    break;
+		case 3: ordenar(a,n);
+				break;
+		case 4: cout<<"ingrese el elemento a buscar:";
+			cin>>elemento;
+			if (buscar(a,n,elemento)==-9)
+				cout<<"no existe el elemento";
+			else
+			cout<<"el primer elemento esta en la posicion"<<buscar(a,n,elemento);
+				break;
+		case 5: prom=promedio(a,n);
+			cout<<"el promedio del vector es :"<<prom;
+				break;
+
+		case 0: cout<<"Saliendo del Menu";
+			    break;
+		default: cout <<"ERROR de opcion";
+			    break;
+		}
+		getch();
+		system("cls");
+	}while (opcion!=0);
+	getch();
+
+}
+}
+void cargarvector(float vec[], int n)
+{
+	int i;
+    for(i=0;i<n;i++)
+       {
+           cout<<"vec["<<i<<"]= ";
+           cin>>vec[i];
+       }
+}
+void mostrarvector(float vec[], int n)
+{
+int i;
+for(i=0;i<n;i++){
+cout<<"los elementos son: "<<vec[i]<<endl;
+}
+}
+void ordenar(vec[], int n)
+{
+int i,j;
+  for(i=0;i<n;i++)
+	   for(j=0;j<n;j++)
+		   if(vec[i]>vec[j]){
+			   aux=vec[i];
+               vec[j]=vec[i];
+			   vec[j]=aux;
+		   }
+}
+float promedio(float vec[], int n)
+{
+float x=0,i;
+    for(i=0;i<n;i++)
+	{
+	x=x+vec[i];
+	}
+	x=x/n;
+	return x; 
+	
+}
+int buscar (int vec[], int n, int elemento){
+	int aux=-9,i;
+	for(i=0;i<n;i++){
+		if(elemento==vec[i]){
+			aux=i;
+			return aux;
+		}
+}
+return aux;
+}
